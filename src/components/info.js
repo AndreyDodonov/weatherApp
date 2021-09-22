@@ -1,14 +1,15 @@
 import React from "react";
 
-class Info extends React.Component {
-    render() {
-        return (
-            <div>
-                <h2>Weather</h2>
-                <p>Be aware of the weather! )</p>
-            </div>
-        );
-    }
+const Info = () => {
+    return (
+        <header>
+            <div className="header-wrapper">
+               <h1 className="header-header">Weather</h1>
+               <span>Be aware of the weather! )</span>
+            </div>            
+        
+    </header>
+    );
 }
 
 export default Info

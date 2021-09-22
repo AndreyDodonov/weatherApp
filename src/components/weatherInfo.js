@@ -1,28 +1,26 @@
 import React from "react";
 
-class WeatherInfo extends React.Component {
-    render() {
-        return (
+const WeatherInfo = (props) => {
+    return (
+        <div>
+        { props.city &&
+            <div className="weather-info"> 
+                <p>Place: {props.city}, {props.country}</p>  
+                <p>Temp: {props.temp} °С</p>
+                <p>Pressure: {props.pressure}</p>  
+                <p>Sunrise: {props.sunrise}</p>  
+                <p>Sunset: {props.sunset}</p>
+            </div> 
+        }
+
+        {props.error &&
             <div>
-                { this.props.city &&
-                    <div> 
-                    <p>Place: {this.props.city}, {this.props.country}</p>  
-                    <p>Temp: {this.props.temp} °С</p>  
-                    <p>Sunrise: {this.props.sunrise}</p>  
-                    <p>Sunset: {this.props.sunset}</p>
-                    </div> 
-                }
-
-                {this.props.error &&
-                    <div>
-                        <p>Error: {this.props.error}</p>
-                    </div>
-
-                }
-                 
+                <p style={{color: "#FF0000"}}>Error: {props.error}</p>
             </div>
-        );
-    }
+        }
+         
+    </div>
+    );
 }
 
 export default WeatherInfo
